@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">Calculate Your BMI in Seconds</h1>
+
+    <div class="glass-form">
+      <form>
+        <label for="height">Height (m)</label>
+        <input type="text" id="height" placeholder="Enter your height" />
+
+        <label for="weight">Weight (kg)</label>
+        <input type="text" id="weight" placeholder="Enter your weight" />
+
+        <button id="button" type="button">Calculate</button>
+      </form>
+      <div id="res">
+        <h3 id="result"></h3>
+        <h3 id="category"></h3>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("button").addEventListener("click", function () {
+        var height = document.getElementById("height").value;
+        var weight = document.getElementById("weight").value;
+
+        var bmi = weight / (height * height);
+        console.log(bmi);
+        document.getElementById("result").innerHTML = bmi.toFixed(2);
+        if (bmi < 18) {
+          document.getElementById("category").innerHTML =
+            "Underweight!!🫢 <br> <br> Eat a burger. Or seven. Your bones are texting me for help.";
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+          document.getElementById("category").innerHTML =
+            "Normal weight🤩🤩 <br> <br> Congrats, you’re in the green zone… for now 😏";
+        } else if (bmi >= 25 && bmi <= 29.9) {
+          document.getElementById("category").innerHTML =
+            "Overweight!!😳😳 <br> <br> One less donut won’t kill you. Probably.";
+        } else if (bmi >= 30 && bmi <= 34.9) {
+          document.getElementById("category").innerHTML =
+            "Obesity class 1 !!😨😨 <br> <br> Maybe the salad section of the menu deserves a visit?";
+        } else if (bmi >= 35 && bmi <= 39.9) {
+          document.getElementById("category").innerHTML =
+            "Obesity class 2 !!😰😰 <br> <br> Your bed has a permanent dent with your name on it.";
+        } else {
+          document.getElementById("category").innerHTML =
+            "Obesity class 3 !!😱😱 <br> <br> You didn’t ‘gain weight’ — you collected it like Pokémon.";
+        }
+      });
+    </script>
+  </body>
+</html>

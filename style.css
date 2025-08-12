@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
+* {
+  box-sizing: border-box; /* Makes width/height include padding and border */
+}
+body {
+  font-family: "DM Serif Text", serif;
+  font-weight: 500;
+  font-style: normal;
+
+  background-image: url(hero.jpg);
+  background-size: cover; /* make it fill the screen */
+  background-position: 0 0;
+  background-repeat: no-repeat; /* don't repeat */
+}
+.title{
+    text-align: center;
+    font-size: 3.3rem;
+}
+/* CSS */
+.glass-form {
+  width: 30rem;
+  padding: 20px;
+  background: rgb(66, 64, 64);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: white;
+  font-family: "DM Serif Text", serif;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.glass-form input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.glass-form button {
+  padding: 10px 15px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.glass-form button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.glass-form p {
+  margin-top: 15px;
+  font-weight: bold;
+}
+.glass-form {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+h3{
+    color: black;
+}
+#res{
+    background-color: azure;
+    border-radius: 10px;
+}
+#category{
+    padding: 1rem;
+}
