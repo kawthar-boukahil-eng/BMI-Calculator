@@ -20,6 +20,7 @@
 
         <button id="button" type="button">Calculate</button>
       </form>
+
       <div id="res">
         <h3 id="result"></h3>
         <h3 id="category"></h3>
@@ -28,30 +29,37 @@
 
     <script>
       document.getElementById("button").addEventListener("click", function () {
-        var height = document.getElementById("height").value;
-        var weight = document.getElementById("weight").value;
+        var height = parseFloat(document.getElementById("height").value);
+        var weight = parseFloat(document.getElementById("weight").value);
+
+        if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+          document.getElementById("result").innerHTML = "";
+          document.getElementById("category").innerHTML =
+            "Please enter valid numbers!";
+          return;
+        }
 
         var bmi = weight / (height * height);
-        console.log(bmi);
         document.getElementById("result").innerHTML = bmi.toFixed(2);
-        if (bmi < 18) {
+
+        if (bmi < 18.5) {
           document.getElementById("category").innerHTML =
-            "Underweight!!🫢 <br> <br> Eat a burger. Or seven. Your bones are texting me for help.";
+            "Underweight!!🫢 <br><br> Eat a burger. Or seven. Your bones are texting me for help.";
         } else if (bmi >= 18.5 && bmi <= 24.9) {
           document.getElementById("category").innerHTML =
-            "Normal weight🤩🤩 <br> <br> Congrats, you’re in the green zone… for now 😏";
+            "Normal weight🤩🤩 <br><br> Congrats, you’re in the green zone… for now 😏";
         } else if (bmi >= 25 && bmi <= 29.9) {
           document.getElementById("category").innerHTML =
-            "Overweight!!😳😳 <br> <br> One less donut won’t kill you. Probably.";
+            "Overweight!!😳😳 <br><br> One less donut won’t kill you. Probably.";
         } else if (bmi >= 30 && bmi <= 34.9) {
           document.getElementById("category").innerHTML =
-            "Obesity class 1 !!😨😨 <br> <br> Maybe the salad section of the menu deserves a visit?";
+            "Obesity class 1 !!😨😨 <br><br> Maybe the salad section of the menu deserves a visit?";
         } else if (bmi >= 35 && bmi <= 39.9) {
           document.getElementById("category").innerHTML =
-            "Obesity class 2 !!😰😰 <br> <br> Your bed has a permanent dent with your name on it.";
+            "Obesity class 2 !!😰😰 <br><br> Your bed has a permanent dent with your name on it.";
         } else {
           document.getElementById("category").innerHTML =
-            "Obesity class 3 !!😱😱 <br> <br> You didn’t ‘gain weight’ — you collected it like Pokémon.";
+            "Obesity class 3 !!😱😱 <br><br> You didn’t ‘gain weight’ — you collected it like Pokémon.";
         }
       });
     </script>
